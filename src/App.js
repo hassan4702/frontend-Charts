@@ -15,9 +15,6 @@ const App = () => {
     axios.get(`${baseURL}/get`).then((res) => {
       console.log(res.data);
       setTasks(res.data);
-
-      const fetchedValues = res.data.map((item) => item.values);
-      setValues(fetchedValues);
     });
   }, [updateUI]);
 
@@ -38,17 +35,24 @@ const App = () => {
     }
   };
 
-  const updateMode = (id, text) => {
+  const updateMode = (id, text,inputText) => {
     console.log(text);
     setInput(text);
+    setInputText(inputText)
     setUpdateID(id);
   };
   const updateTask = () => {
-    axios.put(`${baseURL}/update/${updateID}`, { task: input }).then((res) => {
+    const newValues = inputText
+        .split(",")
+        .map((value) => parseFloat(value.trim()));
+      setValues((prevArray) => [...prevArray, ...newValues]);
+      setInputText("");
+    axios.put(`${baseURL}/update/${updateID}`, { task: input,values:newValues }).then((res) => {
       console.log(res.data);
       setUpdateUI((prevState) => !prevState);
       setUpdateID(null);
       setInput("");
+      setInputText("");
     });
   };
 
@@ -83,7 +87,7 @@ const App = () => {
         ))}
       </ul>
 
-      <Linechart values={values} />
+      <Linechart/>
     </main>
   );
 };

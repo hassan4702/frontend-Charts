@@ -17,10 +17,10 @@ function Linechart() {
       setSdata(newValues);
     };
 
-    const interval = setInterval(fetchData, 1000); // Fetch data every 1 seconds
+    const interval = setInterval(fetchData, 1000); 
 
     return () => {
-      clearInterval(interval); // Clear the interval on component unmount
+      clearInterval(interval); 
     };
   }, []);
 
