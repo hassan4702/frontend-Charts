@@ -57,21 +57,27 @@ const App = () => {
     });
   };
 
-  return (  
+  return (
     <main>
-      <h1>Graph</h1>
-      <div className="input_holder">
+      <h1 className="graph_heading">Graph</h1>
+      <div className="input_holder flex flex-col justify-center items-center">
         <input
+          class="mb-5 rounded-full"
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
         <input
-          type="text"
+          class="mb-5 rounded-full"
+          type="text rounded-full"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
         />
-        <button type="submit" onClick={updateID ? updateTask : addTask}>
+        <button
+          class="bg-sky-400 hover:bg-sky-500 rounded-full px-5 py-3"
+          type="submit"
+          onClick={updateID ? updateTask : addTask}
+        >
           {updateID ? "Update task" : "Add task"}
         </button>
       </div>

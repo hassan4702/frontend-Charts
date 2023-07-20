@@ -26,17 +26,20 @@ function Linechart() {
 
   return (
     <React.Fragment>
-      <div className="container-fluid mt-3 mb-3">
-        <h2>Line Chart - Using Apexcharts in React</h2>
+      <div className="container-fluid mt-3 mb-5 ">
+        <h2 class="flex flex-col justify-center items-center pb-8 mt-10 ">
+          Line Chart
+        </h2>
         <Chart
+          class="flex flex-col justify-center items-center bg-blue-50 mr-20 ml-20"
           type="line"
-          width={1450}
-          height={550}
+          width={900}
+          height={450}
           series={sData}
           options={{
-            title: { text: "Product sell in 2021" },
+            title: { text: "Products" },
             xaxis: {
-              title: { text: "Product Sell in Months" },
+              title: { text: "Product Sold in Months" },
               categories: [
                 "Jan",
                 "Feb",
