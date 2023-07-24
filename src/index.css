@@ -1,47 +1,15 @@
 @tailwind components;
 @tailwind utilities;
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  
-}
 
 main {
-  /* max-width: fit-content; */
-  margin: 0 auto;
-  padding-bottom: 450px;
+  padding-bottom: 150px;
   background-image: linear-gradient(
     to right,
     rgb(190, 166, 166),
     rgb(161, 210, 230)
   );
 }
-
-.title {
-  text-align: center;
-  padding: 20px 0;
-}
-
-.input_holder {
-  /* gap: 20px; */
-  justify-content: center;
-  /* text-align: center; */
-}
-
-input,
-button {
-  padding: 10px;
-}
-
-ul {
-  list-style: none;
-  margin-top: 20px;
-}
-
 li {
-  /* background-color: rgb(216, 216, 216); */
   background-color: white;
   padding: 15px;
   margin-bottom: 10px;
@@ -60,16 +28,7 @@ li {
 .icon {
   cursor: pointer;
 }
-.graph_heading {
-  text-align: center;
-  padding-top: 35px;
-  padding-bottom: 20px;
-}
 .graph-table-container {
-  /* border-radius: 10px;
-  border-collapse: separate ;
-  border-spacing: 0; */
-  /* border: 1px solid black; */
   width: 850px; /* Adjust the width as needed */
   margin: 0 auto; /* Center the container */
 }

@@ -11,7 +11,9 @@ function Linechart({ values }) {
 
   const fetchData = async () => {
     const newValues = [];
-    const reqData = await fetch("https://backend-charts-production-4886.up.railway.app/api/get");
+    const reqData = await fetch(
+      "https://backend-charts-production-4886.up.railway.app/api/get"
+    );
     const resData = await reqData.json();
 
     for (let i = 0; i < resData.length; i++) {
@@ -20,17 +22,17 @@ function Linechart({ values }) {
 
     setSdata(newValues);
   };
-// 
- 
-// 
+  //
+
+  //
   return (
     <React.Fragment>
-      <div className="container-fluid mt-3 mb-5">
+      <div className="container-fluid mt-3 mb-5 flex flex-col justify-center items-center">
         <h2 className="flex flex-col justify-center items-center pb-8 mt-10">
           Line Chart
         </h2>
         <Chart
-          className="flex flex-col justify-center items-center bg-blue-50 mr-80 ml-80 absolute rounded-lg"
+          className=" bg-blue-50 absolute rounded-lg "
           type="line"
           width={850}
           height={450}
@@ -57,7 +59,6 @@ function Linechart({ values }) {
             yaxis: {
               title: { text: "Product in K" },
             },
-            
           }}
         />
       </div>
@@ -66,4 +67,3 @@ function Linechart({ values }) {
 }
 
 export default Linechart;
-
