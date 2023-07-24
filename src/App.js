@@ -75,9 +75,8 @@ const App = () => {
 
   return (
     <main>
-      {/* <Example/> */}
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl pt-5">
           Graph
         </h2>
       </div>
@@ -137,7 +136,7 @@ const App = () => {
         </div>
       </form>
       <div className="mt-5"></div>
-      
+
       <div className="graph-table-container">
         <Table striped bordered hover className=" bg-blue-50 rounded-lg">
           <thead>
@@ -160,8 +159,15 @@ const App = () => {
             ))}
           </tbody>
         </Table>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
-        <Linechart values={values} />
+      <Linechart values={values} />
     </main>
   );
 };
