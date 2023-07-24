@@ -5,18 +5,18 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  
 }
 
 main {
   /* max-width: fit-content; */
   margin: 0 auto;
-  padding-bottom: 10px;
+  padding-bottom: 450px;
   background-image: linear-gradient(
     to right,
     rgb(190, 166, 166),
     rgb(161, 210, 230)
   );
-  /* background-color: rgb(236, 229, 229); */
 }
 
 .title {
@@ -64,4 +64,12 @@ li {
   text-align: center;
   padding-top: 35px;
   padding-bottom: 20px;
+}
+.graph-table-container {
+  /* border-radius: 10px;
+  border-collapse: separate ;
+  border-spacing: 0; */
+  /* border: 1px solid black; */
+  width: 850px; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the container */
 }

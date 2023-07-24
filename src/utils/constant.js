@@ -1,1 +1,1 @@
-export const baseURL="http://localhost:8000/api";
+export const baseURL="https://backend-charts-production-4886.up.railway.app/api";

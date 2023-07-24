@@ -1,39 +1,38 @@
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 
-function Linechart() {
+function Linechart({ values }) {
   const [sData, setSdata] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const newValues = [];
-      const reqData = await fetch("http://localhost:8000/api/get");
-      const resData = await reqData.json();
+    setSdata(values);
+    fetchData(); // Fetch data when the component mounts
+  }, [values]);
 
-      for (let i = 0; i < resData.length; i++) {
-        newValues.push({ name: resData[i].task, data: resData[i].values });
-      }
+  const fetchData = async () => {
+    const newValues = [];
+    const reqData = await fetch("https://backend-charts-production-4886.up.railway.app/api/get");
+    const resData = await reqData.json();
 
-      setSdata(newValues);
-    };
+    for (let i = 0; i < resData.length; i++) {
+      newValues.push({ name: resData[i].task, data: resData[i].values });
+    }
 
-    const interval = setInterval(fetchData, 1000); 
-
-    return () => {
-      clearInterval(interval); 
-    };
-  }, []);
-
+    setSdata(newValues);
+  };
+// 
+ 
+// 
   return (
     <React.Fragment>
-      <div className="container-fluid mt-3 mb-5 ">
-        <h2 class="flex flex-col justify-center items-center pb-8 mt-10 ">
+      <div className="container-fluid mt-3 mb-5">
+        <h2 className="flex flex-col justify-center items-center pb-8 mt-10">
           Line Chart
         </h2>
         <Chart
-          class="flex flex-col justify-center items-center bg-blue-50 mr-20 ml-20"
+          className="flex flex-col justify-center items-center bg-blue-50 mr-80 ml-80 absolute rounded-lg"
           type="line"
-          width={900}
+          width={850}
           height={450}
           series={sData}
           options={{
@@ -58,6 +57,7 @@ function Linechart() {
             yaxis: {
               title: { text: "Product in K" },
             },
+            
           }}
         />
       </div>
@@ -66,3 +66,4 @@ function Linechart() {
 }
 
 export default Linechart;
+
